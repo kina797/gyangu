@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>School Boost</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="login-screen">
+      <div class="login-container">
+        <h1>🏫 School Boost</h1>
+        <p>学校のアカウントでログインしてください</p>
+        <p style="font-size: 0.8rem; color: #666; margin-bottom: 20px">
+          ※ @st.kobedenshi.ac.jp のみが有効です
+        </p>
+
+        <button onclick="loginWithGoogle()" class="google-btn">
+          🔵 Googleアカウントでログイン
+        </button>
+        <p
+          id="login-error"
+          style="color: red; display: none; margin-top: 10px; font-size: 0.9rem"
+        ></p>
+      </div>
+    </div>
+
+    <div class="container" id="main-app" style="display: none">
+      <div class="header-info">
+        <span id="display-name">ゲスト</span>さん
+        <button onclick="logout()" class="logout-btn">ログアウト</button>
+      </div>
+
+      <div id="home-tab">
+        <h2>🌳 クラスの木</h2>
+        <div id="tree-container">
+          <div id="tree-icon">🌱</div>
+          <p id="attendance-rate">
+            本日の出席率: <span id="rate-value">0</span>%
+          </p>
+          <p id="tree-message">みんなが登校すると木が育ちます！</p>
+        </div>
+      </div>
+
+      <div id="quest-area">
+        <div id="status-text" class="status">位置情報を取得中...</div>
+
+        <button id="checkin-btn">🎁 登校チェックイン！</button>
+
+        <div id="gacha-machine" style="display: none">
+          <div id="gacha-body">
+            <div id="gacha-handle-container">
+              <div id="gacha-handle">
+                <div id="handle-bar"></div>
+              </div>
+              <span class="tap-text">タップ</span>
+            </div>
+          </div>
+          <p class="gacha-text">レバーをタップして回そう！</p>
+        </div>
+
+        <div id="result-area">
+          <img id="item-image" class="item-image" src="" alt="獲得アイテム" />
+          <div class="item-name" id="item-name">アイテム名</div>
+          <p>登校ありがとうございます！</p>
+        </div>
+      </div>
+
+      <div id="collection-container">
+        <h2>🎒 獲得した資産</h2>
+        <div id="collection-list">
+          <p class="empty-msg">まだ何もありません</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
